@@ -29,3 +29,8 @@ def test_get_by_label(page):
     page.get_by_label("Valid input" , exact=True).fill("Teste")
     page.get_by_label("Recipient's username" , exact=True).fill("Teste")
     
+
+def test_get_by_title(page):
+    page.goto("https://bootswatch.com/default/")
+    page.pause()
+    page.get_by_title("Source Title").nth(1).click()
