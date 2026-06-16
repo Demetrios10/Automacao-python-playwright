@@ -11,9 +11,21 @@ def test_get_by_role(page):
 
     
 def test_get_by_text(page):
-    # Acessar a página inicial e clicar no link "Home" para verificar se o link está funcionando corretamente
     page.goto("https://automationexercise.com/") 
-    # Adicionar uma pausa para permitir que a página carregue completamente antes de interagir com os elementos
     page.pause()
-    # Acessar a página inicial e clicar no link "Website for automation practice" para verificar se o link está funcionando corretamente
     page.get_by_text("Full-Fledged practice website for").click()
+    
+
+# Acessar a página de login e preencher o campo de email usando o placeholder "Email Address"
+def test_get_by_placeholder(page):
+    page.goto("https://automationexercise.com/login")
+    page.pause()
+    page.get_by_placeholder("Name").fill("Teste")
+
+
+def test_get_by_label(page):
+    page.goto("https://bootswatch.com/default/")
+    page.pause()
+    page.get_by_label("Valid input" , exact=True).fill("Teste")
+    page.get_by_label("Recipient's username" , exact=True).fill("Teste")
+    
