@@ -30,3 +30,16 @@ def test_get_by_title(page):
     page.goto("https://bootswatch.com/default/")
     page.pause()
     page.get_by_title("Source Title").nth(1).click()
+
+
+# usando Locators com CSS Selector
+def test_locator_CSS(page):
+    page.goto("https://automationexercise.com/")
+    page.pause()
+    page.locator('#accordian .panel-title').first.click()
+
+# usando Locators com XPath
+def test_locator_xpath(page):
+    page.goto("https://automationexercise.com/")
+    page.pause()
+    page.locator('//div[@id="accordian"]//h4[@class="panel-title"]').first.click()
