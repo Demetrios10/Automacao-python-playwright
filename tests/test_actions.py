@@ -2,5 +2,5 @@
 def test_click(page):
     page.goto("https://automationexercise.com/")
     page.pause()
-    # clicar com o botão direito do mouse
-    page.get_by_role("link", name="Website for automation").click(button='right')
+    # clicando escolhendo posição
+    page.get_by_role("link", name="Website for automation").click(position= {"x":10 ,"y":10})
